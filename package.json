@@ -1,0 +1,23 @@
+{
+  "name": "apprestapi",
+  "version": "1.0.0",
+  "description": "CRUD Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dewaary/RestAPI-NodeJS.git"
+  },
+  "keywords": [
+    "restapi",
+    "nodejs"
+  ],
+  "author": "Dewa Ari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dewaary/RestAPI-NodeJS/issues"
+  },
+  "homepage": "https://github.com/dewaary/RestAPI-NodeJS#readme"
+}
