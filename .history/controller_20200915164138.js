@@ -8,7 +8,7 @@ exports.index = function (req, res) {
 };
 
 exports.dataStudents = function (req,res) {
-    connection.query("SELECT * from mahasiswa", function(error, rows, fields){
+    connection.query('SELECT * FROM mahasiswa', function(error, rows, fields){
         if(error) {
             connection.log(error);
         }else {

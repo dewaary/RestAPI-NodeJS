@@ -5,7 +5,4 @@ module.exports = function(app) {
 
     app.route('/')
     .get(jsoni.index);
-
-    app.route('/tampil')
-    .get(jsoni.dataStudents);
 }
