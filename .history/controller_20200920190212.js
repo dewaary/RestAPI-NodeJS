@@ -65,7 +65,7 @@ exports.editData = function (req, res) {
 exports.deleteData = function (req, res) {
     var id = req.body.id;
 
-    connection.query("DELETE FROM mahasiswa WHERE id=?", [id],
+    connection.query("DELET FROM mahasiswa WHERE id=?", [id],
     function(error, rows, field) {
         if(error) {
             console.log(error)

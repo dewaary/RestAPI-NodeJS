@@ -62,16 +62,3 @@ exports.editData = function (req, res) {
         });
 };
 
-exports.deleteData = function (req, res) {
-    var id = req.body.id;
-
-    connection.query("DELETE FROM mahasiswa WHERE id=?", [id],
-    function(error, rows, field) {
-        if(error) {
-            console.log(error)
-        }else {
-            response.ok("Succesfully Deleted Data Students by Id", res);
-        }
-    });
-};
-

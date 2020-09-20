@@ -56,22 +56,9 @@ exports.editData = function (req, res) {
             if(error){
                 console.log(error)
             }else {
-                response.ok("Succesfully Edited Data Students by Id", res);
+                response.ok("Succesfully Edited Data Students by Id");
             }
             
         });
-};
-
-exports.deleteData = function (req, res) {
-    var id = req.body.id;
-
-    connection.query("DELETE FROM mahasiswa WHERE id=?", [id],
-    function(error, rows, field) {
-        if(error) {
-            console.log(error)
-        }else {
-            response.ok("Succesfully Deleted Data Students by Id", res);
-        }
-    });
 };
 

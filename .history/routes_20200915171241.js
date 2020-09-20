@@ -11,13 +11,4 @@ module.exports = function(app) {
 
     app.route('/tampil/:id')
     .get(jsoni.getIDstudents);
-
-    app.route('/create')
-    .post(jsoni.addData);
-
-    app.route('/edit')
-    .put(jsoni.editData);
-
-    app.route('/delete')
-    .delete(jsoni.deleteData);
 }

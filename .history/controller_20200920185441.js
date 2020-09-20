@@ -51,27 +51,14 @@ exports.editData = function (req, res) {
     var nama = req.body.nama;
     var jurusan = req.body.jurusan;
 
-    connection.query("UPDATE mahasiswa SET nim=?, nama=?, jurusan=? WHERE id=?", [nim, nama, jurusan, id], 
+    connection.query("UPDATE mahasiswa SET nim=?, nama=?, jurusan=? WHERE id=?", [id,nim, nama, jurusan], 
             function(error, rows, fields) {
             if(error){
                 console.log(error)
             }else {
-                response.ok("Succesfully Edited Data Students by Id", res);
+                response.ok("Succesfully Edited Data Students by Id");
             }
             
         });
-};
-
-exports.deleteData = function (req, res) {
-    var id = req.body.id;
-
-    connection.query("DELETE FROM mahasiswa WHERE id=?", [id],
-    function(error, rows, field) {
-        if(error) {
-            console.log(error)
-        }else {
-            response.ok("Succesfully Deleted Data Students by Id", res);
-        }
-    });
 };
 

@@ -16,8 +16,5 @@ module.exports = function(app) {
     .post(jsoni.addData);
 
     app.route('/edit')
-    .put(jsoni.editData);
-
-    app.route('/delete')
-    .delete(jsoni.deleteData);
+    .put(jsoni.editData)
 }
