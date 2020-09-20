@@ -11,24 +11,11 @@ exports.ok = function(values, res){
 
 exports.okNested = function (values, res) {
     const output = values.reduce((acumulation, item) => {
-        if(acumulation[item.nama]){
+        if(acumulation[item.nam]){
             const group = acumulation[item.nama];
             if(Array.isArray[group.matakuliah]) {
                 group.matakuliah.push(item.matakuliah)
-            }else {
-                group.matakuliah = [group.matakuliah, item.matakuliah]
             }
-        }else {
-            acumulation[item.nama] = item;
         }
-        return acumulation;
-    }, {});
-
-    var data = {
-        'status':200,
-        'values':output
-    };
-    res.json(data);
-    res.end();
-
+    })
 }

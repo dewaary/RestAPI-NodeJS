@@ -18,17 +18,6 @@ exports.okNested = function (values, res) {
             }else {
                 group.matakuliah = [group.matakuliah, item.matakuliah]
             }
-        }else {
-            acumulation[item.nama] = item;
         }
-        return acumulation;
-    }, {});
-
-    var data = {
-        'status':200,
-        'values':output
-    };
-    res.json(data);
-    res.end();
-
+    })
 }

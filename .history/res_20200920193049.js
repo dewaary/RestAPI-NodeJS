@@ -21,14 +21,5 @@ exports.okNested = function (values, res) {
         }else {
             acumulation[item.nama] = item;
         }
-        return acumulation;
-    }, {});
-
-    var data = {
-        'status':200,
-        'values':output
-    };
-    res.json(data);
-    res.end();
-
+    })
 }

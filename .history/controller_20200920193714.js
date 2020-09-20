@@ -81,7 +81,7 @@ exports.viewGroup = function (req, res) {
             if(error){
                 console.log(error)
             }else {
-                response.okNested(rows, res)
+                response.okNested("Data Succesdully")
             }
         }
     )

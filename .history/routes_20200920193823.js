@@ -21,6 +21,6 @@ module.exports = function(app) {
     app.route('/delete')
     .delete(jsoni.deleteData);
 
-    app.route('/viewgroup')
+    app.route('/viewgroup');
     .get(jsoni.viewGroup);
 }

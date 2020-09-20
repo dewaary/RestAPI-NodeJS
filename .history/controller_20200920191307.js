@@ -51,7 +51,7 @@ exports.editData = function (req, res) {
     var nama = req.body.nama;
     var jurusan = req.body.jurusan;
 
-    connection.query("UPDATE mahasiswa SET nim=?, nama=?, jurusan=? WHERE id_mahasiswa=?", [nim, nama, jurusan, id_mahasiswa], 
+    connection.query("UPDATE mahasiswa SET nim=?, nama=?, jurusan=? WHERE id=?", [nim, nama, jurusan, id], 
             function(error, rows, fields) {
             if(error){
                 console.log(error)
@@ -65,7 +65,7 @@ exports.editData = function (req, res) {
 exports.deleteData = function (req, res) {
     var id = req.body.id;
 
-    connection.query("DELETE FROM mahasiswa WHERE id_mahasiswa=?", [id],
+    connection.query("DELETE FROM mahasiswa WHERE id=?", [id],
     function(error, rows, field) {
         if(error) {
             console.log(error)
@@ -74,18 +74,4 @@ exports.deleteData = function (req, res) {
         }
     });
 };
-
-exports.viewGroup = function (req, res) {
-    connection.query("SELECT mahasiswa.id_mahasiswa, mahasiswa.nim, mahasiswa.nama, mahasiswa.jurusan, matakuliah.matakuliah, matakuliah.sks FROM krs JOIN matakuliah JOIN mahasiswa WHERE krs.id_matakuliah = matakuliah.id_matakuliah AND krs.id_mahasiswa = mahasiswa.id_mahasiswa ORDER BY mahasiswa.id_mahasiswa",
-        function (error, rows, fiels) {
-            if(error){
-                console.log(error)
-            }else {
-                response.okNested(rows, res)
-            }
-        }
-    )
-
-
-}
 

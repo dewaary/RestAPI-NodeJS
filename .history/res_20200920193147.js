@@ -23,12 +23,4 @@ exports.okNested = function (values, res) {
         }
         return acumulation;
     }, {});
-
-    var data = {
-        'status':200,
-        'values':output
-    };
-    res.json(data);
-    res.end();
-
 }
