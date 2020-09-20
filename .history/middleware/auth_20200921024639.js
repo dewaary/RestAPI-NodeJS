@@ -93,5 +93,5 @@ exports.login = function (req, res) {
 }
 
 exports.secretPage = function (req, res) {
-    response.ok("This page is only for users who have role == 2!", res)
+    response.ok("This page is only for users who have role == 2!")
 }

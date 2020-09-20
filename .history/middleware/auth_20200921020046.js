@@ -44,9 +44,8 @@ exports.registrasi = function (req, res) {
 
 exports.login = function (req, res) {
     var post = {
-        email: req.body.email,
         password: req.body.password,
-        
+        email: req.body.email,
     }
 
     var query = "SELECT * FROM ?? WHERE ??=? AND ??=?";
@@ -61,10 +60,10 @@ exports.login = function (req, res) {
                 var token = jwt.sign({rows}, config.secret, {
                     expiresIn: 1440
                 });
-                id_users = rows[0].id_users;
+                id_user = rows[0].id_users;
 
                 var data = {
-                    id_users: id_users,
+                    id_user: id_user,
                     access_token: token,
                     ip_address: ip.address()
                 }
@@ -90,8 +89,4 @@ exports.login = function (req, res) {
             }
         }
     })
-}
-
-exports.secretPage = function (req, res) {
-    response.ok("This page is only for users who have role == 2!", res)
 }

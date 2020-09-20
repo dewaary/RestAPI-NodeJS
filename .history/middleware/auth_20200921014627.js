@@ -44,9 +44,8 @@ exports.registrasi = function (req, res) {
 
 exports.login = function (req, res) {
     var post = {
-        email: req.body.email,
         password: req.body.password,
-        
+        email: req.body.email,
     }
 
     var query = "SELECT * FROM ?? WHERE ??=? AND ??=?";
@@ -57,41 +56,11 @@ exports.login = function (req, res) {
         if(error){
             console.log(error);
         }else {
-            if(rows.length == 1){
+            if(rows == 1){
                 var token = jwt.sign({rows}, config.secret, {
                     expiresIn: 1440
                 });
-                id_users = rows[0].id_users;
-
-                var data = {
-                    id_users: id_users,
-                    access_token: token,
-                    ip_address: ip.address()
-                }
-
-                var query = "INSERT INTO ?? SET ?";
-                var table = ["akes_token"];
-
-                query = mysql.format(query, table);
-                connection.query(query, data, function (error, rows) {
-                    if(error) {
-                        console.log(error);
-                    }else {
-                         res.json({
-                             success: true,
-                             message: "Token JWT generated",
-                             token:token,
-                             currUser: data.id_user
-                         });
-                    }
-                });
-            }else {
-                 res.json({"Error": true, "Message": "Email or Password Invalid"});
             }
         }
     })
-}
-
-exports.secretPage = function (req, res) {
-    response.ok("This page is only for users who have role == 2!", res)
 }
