@@ -13,8 +13,6 @@ app.use(morgan('dev'));
 var routes = require('./routes');
 routes(app);
 
-app.use('/auth', require('./middleware'));
-
 app.listen(3000, () => {
     console.log(`Server started on port`);
 });

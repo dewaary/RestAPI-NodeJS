@@ -36,7 +36,7 @@ exports.registrasi = function (req, res) {
                     }
                 });
             }else {
-                response.ok("Email is ready!", res)
+                response.ok("Email is ready!")
             }
         }
     });

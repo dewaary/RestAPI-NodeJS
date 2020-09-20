@@ -1,7 +1,7 @@
 var connection = require('../connetions')
 var mysql = require('mysql')
 var md5 = require('md5')
-var response = require('../res')
+var response = require('response')
 var jwt = require('jsonwebtoken')
 var config = require('../config/secret')
 var ip = require('ip')
@@ -15,7 +15,7 @@ exports.registrasi = function (req, res) {
         tanggal_daftar: new Date()
     }
 
-    var query = "SELECT email FROM ?? WHERE ??=?";
+    var query = "SELECT email FROM ?? WHERE ??";
     var table = ["user", "email", post.email];
 
     query = mysql.format(query, table);
@@ -32,11 +32,11 @@ exports.registrasi = function (req, res) {
                     if(error){
                         console.log(error)
                     }else {
-                        response.ok("Succesfuly create user new", res);
+                        response.ok("Succesfuly create user new");
                     }
                 });
             }else {
-                response.ok("Email is ready!", res)
+                response.ok("Email is ready!")
             }
         }
     });
